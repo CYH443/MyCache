@@ -6,44 +6,39 @@
 
 内存组件架构：
 
+根据不同的缓存淘汰策略，设计不同的缓存组件：  
+FIFOMemoryCache、LRUMemoryCache、MRUMemoryCache、SoftReferenceMemoryCache  
+
+前三种归为一类，组件中不仅要维护一个Map集合，还有维护一个双向链表，不同的缓存淘汰策略会以不同的方式插入和删除双向队列的节点 
+
+SoftReferenceMemoryCache软引用缓存，对象是否被回收取决于内存的紧张程度：如果内存空间足够，垃圾回收器就不会回收这个对象；如果GC后内存还是不足，就会被回收   
+
 ![image](https://user-images.githubusercontent.com/69895512/174468399-41ca04a3-c302-4add-bb61-e6b0ebd33f21.png)
-
-
-
 
 
 磁盘组件架构：
 
+数据在磁盘文件中以Block为单位进行存储，在内存中为每一个Block设计了一个磁盘元素的描述符(内存索引) ：IndexedDiskElementDescriptor，记录为数据在磁盘文件中的位置和大小。主要就是为了快速定位元素在磁盘文件中的位置，快读读取和写入等操作。  
+
 ![image](https://user-images.githubusercontent.com/69895512/174468285-14d7de0a-d6db-4d45-892f-78fbd5327bca.png)
-
-
-
 
 
 线性组件架构：
 
-
 ![image](https://user-images.githubusercontent.com/69895512/174468293-7a879f8c-f38c-4a74-8c0a-abf073318c68.png)
 
 
-
-
-
-
-服务注册与发现架构设计
+服务注册与发现架构：
 
 ![image](https://user-images.githubusercontent.com/69895512/174468443-7ca7cdb7-ada0-48cc-bff3-f89ff5f2a442.png)
 
 
-
-
 异步事件队列机制：
 
+将函数调用转换成异步事件进行处理，实现数据的异步存储和多任务并发
 ![image](https://user-images.githubusercontent.com/69895512/174468484-69c6ba51-295d-46b5-9071-2e7eedc61700.png)
 
-
-
-线性组件的异步处理机制流程
+线性组件的异步处理机制流程：
 
 ![image](https://user-images.githubusercontent.com/69895512/174468598-e563ff0a-b004-4386-b5d4-3b2cf6b1978b.png)
 
