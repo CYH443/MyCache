@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/auxilible/auxilible.iml" filepath="$PROJECT_DIR$/auxilible/auxilible.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cachekit4-master-8c8bb02a0864bb7c31718f98045e8f4c93ed101acachekit4.git.iml" filepath="$PROJECT_DIR$/cachekit4-master-8c8bb02a0864bb7c31718f98045e8f4c93ed101acachekit4.git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/conf/conf.iml" filepath="$PROJECT_DIR$/conf/conf.iml" />
+    </modules>
+  </component>
+</project>

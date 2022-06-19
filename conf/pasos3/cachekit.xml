@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+    <caches>
+        <cache id="default">
+            <cacheattributes class="com.cachekit.core.ContextCacheAttributes">
+                <property name="MaxObjects" value="1000" />
+                <property name="MemoryCacheName" value="com.cachekit.core.memory.lru.LRUMemoryCache" />
+                <property name="UseMemoryShrinker" value="true" />
+                <property name="MaxMemoryIdleTimeSeconds" value="3600" />
+				<property name="ShrinkerIntervalSeconds" value="60" />
+				<property name="MaxSpoolPerRun" value="50" />
+            </cacheattributes>
+			
+			<elementattributes class="com.cachekit.core.ElementAttributes">
+				<property name="IsEternal" value="false" />
+			</elementattributes>
+			<kit>kit1,kit2</kit>
+        </cache>
+    </caches>
+	
+	
+    <kits>
+		<kit id="kit1" class="com.cachekit.kits.disk.indexed.IndexedDiskCacheFactory">
+			<attributes class="com.cachekit.kits.disk.indexed.IndexedDiskCacheAttributes">
+				<property name="DiskPath" value="C:/Users/dell/Desktop" />
+			</attributes>
+		</kit>
+		
+		<kit id="kit2" class="com.cachekit.kits.paxos.PaxosCacheFactory">
+			<attributes class="com.cachekit.kits.paxos.PaxosCacheAttributes">
+				<property name="servers" value="127.0.0.1:2463,127.0.0.1:2464,127.0.0.1:2465" />
+				<property name="myPosition" value="2" />
+			</attributes>
+		</kit>
+	</kits>
+</configuration>
