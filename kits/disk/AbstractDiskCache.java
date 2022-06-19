@@ -72,7 +72,6 @@ public abstract class AbstractDiskCache<K, V> extends AbstractKitCacheEvent<K, V
         removeAllLock.writeLock().lock();
         try
         {
-            //为什么加了读锁后还要再加个synchronize内部锁
             synchronized (this)
             {
                 if (diskCacheAttributes.getMaxPurgatorySize() >= 0)
