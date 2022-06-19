@@ -42,3 +42,8 @@
 ![image](https://user-images.githubusercontent.com/69895512/174468484-69c6ba51-295d-46b5-9071-2e7eedc61700.png)
 
 
+
+线性组件的异步处理机制流程
+
+![image](https://user-images.githubusercontent.com/69895512/174468598-e563ff0a-b004-4386-b5d4-3b2cf6b1978b.png)
+
