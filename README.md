@@ -25,10 +25,16 @@ SoftReferenceMemoryCache软引用缓存，对象是否被回收取决于内存�
 
 线性组件架构：
 
+基于TCP Socket进行机器节点间的网络通信，分别实现了远程数据更新、数据读取、数据删除等相关服务
 ![image](https://user-images.githubusercontent.com/69895512/174468293-7a879f8c-f38c-4a74-8c0a-abf073318c68.png)
 
 
 服务注册与发现架构：
+
+基于UDP组播实现服务注册与服务发现，三种广播消息类型：    
+REQUEST：服务请求，要求其他节点进行服务广播   
+PASSIVE：服务广播      
+REMOVE：节点下线导致服务不可用，需要其他节点删除自身服务   
 
 ![image](https://user-images.githubusercontent.com/69895512/174468443-7ca7cdb7-ada0-48cc-bff3-f89ff5f2a442.png)
 
